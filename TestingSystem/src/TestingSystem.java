@@ -72,7 +72,7 @@ public class TestingSystem {
                 numberPossibleAnswer = j + 1;
                 System.out.println(numberPossibleAnswer + ". " + possibleAnswerArr[i][j]); // Вывод вариантов ответов
             }
-            answer = 1;
+
             do {
                 System.out.println("Пожалуйста, введите номер вашего ответа:");
                 answerStr = consol.nextLine();
