@@ -12,7 +12,7 @@ public class TestingSystem {
         String[][] possibleAnswerArr; // массив с вариантами ответов
         int numberQuestion = 0; // номер вопроса
         int numberPossibleAnswer = 0; // номер варианта ответа
-        int answer; // ответ участника
+        int answer = 0; // ответ участника
         String answerStr; // ответ участника типа String
         int questionCount = 0; // кол-во вопросов
         int possibleAnswerCount = 0; // кол-во вариантов ответов
