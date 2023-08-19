@@ -13,14 +13,12 @@ public class TestingSystem {
         int numberQuestion = 0; // номер вопроса
         int numberPossibleAnswer = 0; // номер варианта ответа
         int answer = 0; // ответ участника
-        String answerStr; // ответ участника типа String
         int questionCount = 0; // кол-во вопросов
         int possibleAnswerCount = 0; // кол-во вариантов ответов
         int answerRightCount = 0; // количество правильных ответов участника
         int answerWrongCount = 0; // количество неправильных ответов участника
         int answerPass; // кол-во ответов для успешного прохождения
         int koefPassCur; // процент прохождения участника
-        boolean notEmtyStr = false; //флаг введенной пустой строки: true - строка не пустая, false - строка пустая
         boolean getNumber = false; // флаг того, что введено число: true - введено число, false - введено не число
         boolean answerInPossible = false; // флаг того, что ответ - один из вариантов ответа: true - корректный, false - некорректный
         boolean answerCorrect = false; // флаг корректного ответа участника: true - корректный, false - некорректный
@@ -75,39 +73,18 @@ public class TestingSystem {
 
             do {
                 System.out.println("Пожалуйста, введите номер вашего ответа:");
-                answerStr = consol.nextLine();
-
-                //Проверка на пустую строку
-
-                if (answerStr == "") {
-                    notEmtyStr = false;
-                    System.out.println("Ответ некорректен. Вы не дали ответ.");
-                } else {
-                    notEmtyStr = true;
-                }
-
-                //Проверка на буквы
-                //разбиваю стрингу на чары, прохожусь по каждому и смотрю принадлежит ли он от 0 до 9
                 getNumber = true;
-                for (int j = 0; j < answerStr.length() && getNumber; j++) {
-                    getNumber = false;
-                    if (j == 0){
-                        if (49<=(int)answerStr.toCharArray()[j] && (int)answerStr.toCharArray()[j] <= 57) { //Проверка,что первая цифра - не ноль
-                            getNumber = true;
-                        }
-                    } else {
-                        if (48 <= (int) answerStr.toCharArray()[j] && (int) answerStr.toCharArray()[j] <= 57) { //аля множество целых чисел в чаровском представлении '0'-k=48,'9'-k=57
-                            getNumber = true;
-                        }
-                    }
-                }
-                if (!getNumber) {
+                if (consol.hasNextInt()) {
+                    answer = consol.nextInt();
+                    getNumber = true;
+                } else {
                     System.out.println("Ответ некорректен. Ответом должно являться число.");
+                    getNumber = false;
+                    consol.nextLine();
                 }
 
                 //Проверка на то, что ответ - один из вариантов ответа
-                if (getNumber&&notEmtyStr) {
-                    answer = Integer.parseInt (answerStr);
+                if (getNumber) {
                     if (answer > 0 && answer <= possibleAnswerCount) {
                         answerInPossible = true;
                     } else {
@@ -115,7 +92,7 @@ public class TestingSystem {
                         System.out.println("Ответ некорректен. Ваш ответ не является одним из вариантов ответа.");
                     }
                 }
-                answerCorrect = notEmtyStr && getNumber && answerInPossible;
+                answerCorrect = getNumber && answerInPossible;
             } while (!answerCorrect);
 
             //если ответ дан правильный, то прибавляем счетчик правильных ответов
