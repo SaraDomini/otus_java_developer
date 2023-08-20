@@ -27,7 +27,7 @@ public class SortingAlgorithm {
         long endTimeBubbleSort = System.currentTimeMillis();
         System.out.println("\nСортировка пузырьком затратила: " + (endTimeBubbleSort - startTimeBubbleSort) + " milliseconds");
 //        System.out.println("Отсортированный список пузырьком:");
-//        ListComands.print(listSorted);
+//        ListCommands.print(listSorted);
 
         listSorted = listForSorting; //обновление на начальный список
         long startTimeCollectionsSort = System.currentTimeMillis();
@@ -35,7 +35,7 @@ public class SortingAlgorithm {
         long endTimeCollectionsSort = System.currentTimeMillis();
         System.out.println("\nСортировка с помощью Collections.sort затратила: " + (endTimeCollectionsSort - startTimeCollectionsSort) + " milliseconds");
 //        System.out.println("Отсортированный список с помощью Collections.sort:");
-//        ListComands.print(listSorted);
+//        ListCommands.print(listSorted);
 
         System.out.println("\nСортировка пузырьком списка из " + listForSortingCount + " элементов отработала дольше в " + (endTimeBubbleSort - startTimeBubbleSort)/(endTimeCollectionsSort - startTimeCollectionsSort) + " раз");
     }

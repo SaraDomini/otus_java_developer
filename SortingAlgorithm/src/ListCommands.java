@@ -17,9 +17,7 @@ public class ListCommands {
 
     //вывод на экран
     public static void print(Iterable<Integer> collection) {
-        Iterator<Integer> iterator = collection.iterator();
-        while (iterator.hasNext()) {
-            Integer item = iterator.next();
+        for (Integer item : collection) {
             System.out.print(item + " ");
         }
         System.out.println();
