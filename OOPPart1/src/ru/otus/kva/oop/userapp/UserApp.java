@@ -1,6 +1,6 @@
-package ru.otus.kva.oop.userApp;
+package ru.otus.kva.oop.userapp;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class UserApp {
     public static void main(String[] args) {
@@ -21,9 +21,8 @@ public class UserApp {
                         1940, "osetr@mail.ru")
         };
 
-        Calendar calendar = Calendar.getInstance();
         for (int i = 0; i < users.length; i++) {
-            if (calendar.get(Calendar.YEAR) - users[i].getYearOfBirth() > 40) {
+            if (LocalDate.now().getYear() - users[i].getYearOfBirth() > 40) {
                 users[i].printInfo();
                 System.out.println();
             }

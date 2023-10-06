@@ -1,4 +1,4 @@
-package ru.otus.oop.boxApp;
+package ru.otus.oop.boxapp;
 
 public class Box {
     private float length;
@@ -98,8 +98,8 @@ public class Box {
             System.out.println("Коробка закрыта. " +
                     "Чтобы попробовать выложить из нее предмет, нужно ее открыть.");
         } else if (this.thing == null) {
-            System.out.println("Коробка пуста. Выбрасывать нечего");
-        } else if (this.thing != thing) {
+            System.out.println("Коробка пуста. Выбрасывать нечего.");
+        } else if (!this.thing.equals(thing)) {
             System.out.println("Такого предмета в коробке нет.");
         } else {
             this.thing = null;

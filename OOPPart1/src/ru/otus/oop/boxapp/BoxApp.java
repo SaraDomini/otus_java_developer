@@ -1,4 +1,4 @@
-package ru.otus.oop.boxApp;
+package ru.otus.oop.boxapp;
 
 public class BoxApp {
     public static void main(String[] args) {
@@ -39,7 +39,7 @@ public class BoxApp {
         fridge.deleteThing("Жираф");
         fridge.putThing("Слон");
         fridge.printInfo();
-        //Пока пытались впихнуть слона в холодильник, узнали что слона зовут Дамбо
+        //Пока пытались впихнуть слона в холодильник, узнали, что слона зовут Дамбо
         //Пробуем достать Дамбо из холодильника
         fridge.deleteThing("Дамбо");
         //Пробуем достать слона из холодильника и закрываем его

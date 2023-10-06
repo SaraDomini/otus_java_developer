@@ -1,6 +1,6 @@
-package ru.otus.kva.oop.userApp;
+package ru.otus.kva.oop.userapp;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class User {
     private String lastName;
@@ -10,11 +10,11 @@ public class User {
     private String email;
 
     //геттеры
-    public String getLastName(){
+    public String getLastName() {
         return lastName;
     }
 
-    public String getFirstName(){
+    public String getFirstName() {
         return firstName;
     }
 
@@ -32,26 +32,25 @@ public class User {
 
     //сеттеры
     public void setLastName(String lastName) {
-        if (lastName != null){
+        if (lastName != null) {
             this.lastName = lastName;
         }
     }
 
     public void setFirstName(String firstName) {
-        if (firstName != null){
+        if (firstName != null) {
             this.firstName = firstName;
         }
     }
 
     public void setMiddleName(String middleName) {
-        if (middleName != null){
+        if (middleName != null) {
             this.middleName = middleName;
         }
     }
 
     public void setYearOfBirth(int yearOfBirth) {
-        Calendar calendar = Calendar.getInstance();
-        if (yearOfBirth > 1900 && yearOfBirth <= (calendar.get(Calendar.YEAR) - 10)) {
+        if (yearOfBirth > 1900 && yearOfBirth <= (LocalDate.now().getYear() - 10)) {
             this.yearOfBirth = yearOfBirth;
         }
     }
